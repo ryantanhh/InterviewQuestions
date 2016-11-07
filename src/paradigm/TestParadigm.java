@@ -88,7 +88,7 @@ public class TestParadigm {
                 map1.put(c1, map1.get(c1) + 1);
             }
 
-            // The same as handling s1
+            // The same handling to s2
             if (map2.get(c2) == null) {
                 map2.put(c2, 1);
             } else {
