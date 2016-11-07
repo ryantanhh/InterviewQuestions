@@ -38,14 +38,15 @@ public class TestParadigm {
             return false;
         }
 
-        // Build a mutable string
-        StringBuilder s2 = new StringBuilder(str2);
+        // Change to lower case and build a mutable string from str2
+        String s1 = str1.toLowerCase();
+        StringBuilder s2 = new StringBuilder(str2.toLowerCase());
 
         // A loop to search if each character in string 1 is also in string 2
-        for (int i = 0; i < str1.length(); i++) {
-            // Find the character in s2
+        for (int i = 0; i < s1.length(); i++) {
+            // Find whether the character in s1[i] in s2
             // O(n) = ???
-            int pos = s2.indexOf(str1.substring(i, i + 1));
+            int pos = s2.indexOf(s1.substring(i, i + 1));
 
             // If not found, stop
             if (pos == -1) {
@@ -77,8 +78,8 @@ public class TestParadigm {
         HashMap<Character, Integer> map2 = new HashMap<>();
 
         for (int i = 0; i < str1.length(); i++) {
-            Character c1 = str1.charAt(i);
-            Character c2 = str2.charAt(i);
+            Character c1 = Character.toLowerCase(str1.charAt(i));
+            Character c2 = Character.toLowerCase(str2.charAt(i));
             // If the key is not added, add one.
             if (map1.get(c1) == null) {
                 map1.put(c1, 1);
